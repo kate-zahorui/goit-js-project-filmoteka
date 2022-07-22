@@ -2,8 +2,10 @@ import debounce from 'lodash.debounce';
 import Delivery from './js/Delivery';
 import getGenres from './js/getGenre';
 import { createMarkup } from './js/markupFilmCard';
+import './js/buttons';
 
 const listRef = document.querySelector('.list__film');
+
 const search = document.querySelector('#search-box');
 const delivery = new Delivery();
 

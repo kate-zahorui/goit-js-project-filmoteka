@@ -1,0 +1,60 @@
+.header__btns {
+    display: flex;
+    justify-content: center;
+}
+
+.modal__btns {
+    display: flex;
+    justify-content: center;
+}
+
+.header__btns__button {
+
+    @include button(#FFFFFF);
+
+    width: 130px;
+
+    @include tablet {
+        width: 152px;
+    }
+
+    @include desktop {
+        width: 148px;
+    }
+
+    &:first-child {
+        margin-right: 20px;
+
+
+        @include tablet {
+            margin-right: 32px;
+        }
+
+        @include desktop {
+            margin-right: 16px;
+        }
+    }
+}
+
+.modal__btns__button {
+    @include button(#000000);
+
+    width: 110px;
+
+    @include tablet {
+        width: 125px;
+    }
+
+    @include desktop {
+        width: 136px;
+    }
+
+    &:first-child {
+        margin-right: 20px;
+
+
+        @include tablet {
+            margin-right: 15px;
+        }
+    }
+}
