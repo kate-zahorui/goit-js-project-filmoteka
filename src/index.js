@@ -7,18 +7,18 @@ const delivery = new Delivery();
 
 search.addEventListener('input', debounce(searchMovies, 500));
 
-getMovies('');
+getMovies();
 
 async function searchMovies() {
   const query = search.value.trim();
   delivery.query = query;
-  getMovies(query);
+  getMovies();
 }
 
-async function getMovies(query) {
+async function getMovies() {
   let data;
   try {
-    data = query ? await delivery.search() : await delivery.trend();
+    data = delivery.query ? await delivery.search() : await delivery.trend();
   } catch (error) {
     console.log('ERROR = ', error);
   }
