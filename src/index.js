@@ -2,6 +2,8 @@ import debounce from 'lodash.debounce';
 import Delivery from './js/Delivery';
 import getGenres from './js/getGenre';
 
+import './js/buttons';
+
 const search = document.querySelector('#search-box');
 const delivery = new Delivery();
 
