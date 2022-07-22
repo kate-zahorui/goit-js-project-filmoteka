@@ -1,0 +1,67 @@
+.films{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    @include tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    }
+}
+
+.list__film {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    
+    @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    }
+
+    @include desktop {
+    gap: 16px;
+    justify-content: start;
+}
+}
+// .list__item {
+    
+//     }
+
+.list__item:not(:last-child) {
+    margin-bottom: 20px;
+    @include tablet{
+        margin-bottom: 0;
+    }
+    @include desktop {
+    margin-bottom: 16px;
+}
+}
+
+.list__img {
+  @include tablet {
+    width: 336px;
+    }
+    @include desktop {
+    width: 394px;
+}
+}
+
+.list__text{
+padding-top: 10px;
+}
+
+.list__title {
+font-weight: 500;
+font-size: inherit;
+line-height: 1.17;
+text-transform: uppercase;
+}
+
+.list__genre {
+font-weight: 500;
+line-height: 1.33;
+
+color: $accentColor;
+}
