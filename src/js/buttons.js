@@ -4,8 +4,14 @@ const queueBtn = document.querySelector('.js-queue');
 const savedWatched = localStorage.getItem('watched');
 const savedQueue = localStorage.getItem('queue');
 
-watchedBtn.addEventListener('click', watchedBtnClick);
-queueBtn.addEventListener('click', queueBtnClick);
+if (watchedBtn) {
+  watchedBtn.addEventListener('click', watchedBtnClick);
+}
+if (queueBtn) {
+  queueBtn.addEventListener('click', queueBtnClick);
+}
+// watchedBtn.addEventListener('click', watchedBtnClick);
+// queueBtn.addEventListener('click', queueBtnClick);
 
 function watchedBtnClick(movie_id) {
   console.log(1);
@@ -33,8 +39,14 @@ function queueBtnClick(movie_id) {
 const addToWatchedBtn = document.querySelector('.js-addtowatched');
 const addToQueueBtn = document.querySelector('.js-addtoqueue');
 
-addToWatchedBtn.addEventListener('click', addToWatchedBtnClick);
-addToQueueBtn.addEventListener('click', addToQueueBtnClick);
+if (addToWatchedBtn) {
+  addToWatchedBtn.addEventListener('click', addToWatchedBtnClick);
+}
+if (addToQueueBtn) {
+  addToQueueBtn.addEventListener('click', addToQueueBtnClick);
+}
+// addToWatchedBtn.addEventListener('click', addToWatchedBtnClick);
+// addToQueueBtn.addEventListener('click', addToQueueBtnClick);
 
 function addToWatchedBtnClick(movie_id) {
   console.log(3);
