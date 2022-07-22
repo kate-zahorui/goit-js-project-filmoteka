@@ -1,5 +1,3 @@
-import '../sass/index.scss';
-
 const watchedBtn = document.querySelector('.js-watched');
 const queueBtn = document.querySelector('.js-queue');
 
