@@ -2,6 +2,7 @@ import debounce from 'lodash.debounce';
 import Delivery from './js/Delivery';
 import getGenres from './js/getGenre';
 import { createMarkup } from './js/markupFilmCard';
+import pagination from './js/pagination';
 import './js/modal';
 
 const listRef = document.querySelector('.list__film');
@@ -30,3 +31,5 @@ async function getMovies() {
   }
   console.log(data);
 }
+
+pagination();

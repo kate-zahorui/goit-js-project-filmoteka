@@ -50,6 +50,9 @@
 
 .list__text{
 padding-top: 10px;
+@include desktop {
+    width: 394px;
+}
 }
 
 .list__title {
@@ -57,6 +60,14 @@ font-weight: 500;
 font-size: inherit;
 line-height: 1.17;
 text-transform: uppercase;
+@include tablet {
+    line-height: 1.33;
+    }
+
+    @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+}
 }
 
 .list__genre {
@@ -64,8 +75,21 @@ font-weight: 500;
 line-height: 1.33;
 
 color: $accentColor;
+    @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+}
 }
 
+.tui-pagination{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include tablet {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    }
+}
+  
 .list__vote {
     display: inline-block;
     width: 36px;
@@ -75,5 +99,5 @@ color: $accentColor;
     border-radius: 5px;
     @include desktop {
         width: 40px;
-    }
+}
 }
