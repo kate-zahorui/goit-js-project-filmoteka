@@ -32,7 +32,7 @@
     font-size: 30px;
     line-height: 1.17;
 
-    color: #FFFFFF;
+    color: $whiteColor;
 
     @include desktop {
         gap: 10px;
@@ -54,7 +54,7 @@
     align-items: center;
     justify-content: space-between;
 
-    color: #FFFFFF;
+    color: $whiteColor;
 }
 
 .navigation__list {
@@ -74,7 +74,7 @@
         height: 3px;
         margin: inherit;
         display: block;
-        background-color: #FF001B;
+        background-color: $secondAccentColor;
 
     }
 }
@@ -99,14 +99,14 @@
     display: flex;
     align-items: center;
     
-    color: #FFFFFF;
+    color: $whiteColor;
     background-color: transparent;
     border: none;
-    border-bottom: 0.5px solid #FFFFFF;
+    border-bottom: 0.5px solid $whiteColor;
     outline: none;
     
     &::placeholder {
-        color: #FFFFFF;
+        color: $whiteColor;
     }
 }
 
@@ -115,5 +115,5 @@
     width: 12px;
     right: 0;
     bottom: 6px;
-    fill: #FFFFFF;
+    fill: $whiteColor;
 }
