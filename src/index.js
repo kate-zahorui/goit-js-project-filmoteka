@@ -3,6 +3,7 @@ import Delivery from './js/Delivery';
 import getGenres from './js/getGenre';
 import { createMarkup } from './js/markupFilmCard';
 import './js/buttons';
+import './js/modal';
 
 const listRef = document.querySelector('.list__film');
 
