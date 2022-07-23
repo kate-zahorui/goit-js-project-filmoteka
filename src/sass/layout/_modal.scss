@@ -1,0 +1,60 @@
+.movies-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+
+  padding: 48px 20px 40px 20px;
+  background-color: $whiteColor;
+
+  @media screen and (max-width: 767px) {
+    max-height: calc(100% - 40px);
+    overflow-y: scroll;
+  }
+
+  @include mobile {
+    width: 440px;
+  }
+
+  @include tablet {
+    width: 704px;
+    padding: 40px 36px;
+    min-height: 550px;
+  }
+
+  @include desktop {
+    width: 806px;
+    padding: 40px 12px;
+  }
+}
+
+.movies-modal__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+  color: $mainColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: $accentColor;
+  }
+}
+
+.movies-modal__close-icon {
+  fill: currentColor;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}

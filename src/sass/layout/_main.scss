@@ -89,3 +89,15 @@ color: $accentColor;
     margin-bottom: 60px;
     }
 }
+  
+.list__vote {
+    display: inline-block;
+    width: 36px;
+    text-align: center;
+    color: $whiteColor;
+    background-color: $accentColor;
+    border-radius: 5px;
+    @include desktop {
+        width: 40px;
+}
+}
