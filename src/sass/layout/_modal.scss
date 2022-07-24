@@ -58,3 +58,30 @@
   height: 30px;
   flex-shrink: 0;
 }
+
+// movie-modal__content
+
+.movie-modal__content {
+  @include tablet {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.movie-modal__img {
+  border-radius: 5px;
+
+  @include tablet {
+    width: 264px;
+    margin-right: 68px;
+  }
+
+  @include desktop {
+    width: 375px;
+    margin-right: 16px;
+  }
+}
+
+.movie-modal__figures {
+  display: flex;
+}

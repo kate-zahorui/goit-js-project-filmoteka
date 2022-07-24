@@ -1,20 +1,41 @@
 import * as basicLightbox from 'basiclightbox';
+import Delivery from './Delivery';
+import { modalLibraryMarkup } from './modalLibraryMarkup';
+
+const delivery = new Delivery();
 
 const listRef = document.querySelector('.list__film');
 
 listRef.addEventListener('click', onFilmClick);
 
-function onFilmClick(e) {
+async function onFilmClick(e) {
   e.preventDefault();
   if (e.target.nodeName === 'UL') {
     return;
   }
-  openModal();
+  const movieCard = e.target.closest('li[id]');
+  const movieId = getId(movieCard);
+  const movie = await getMovieById(movieId);
+
+  openModal(movie);
 }
 
-function openModal() {
-  // const moviesModalContent = modalLibraryMarkup(filmId);
-  // ${moviesModalContent}
+function getId(movieCard) {
+  return movieCard.id;
+}
+
+async function getMovieById(movieId) {
+  try {
+    const movie = await delivery.fetchById(movieId);
+    return movie;
+  } catch (error) {
+    console.log('ERROR = ', error);
+  }
+  console.log(data);
+}
+
+function openModal(movie) {
+  const moviesModalContent = modalLibraryMarkup(movie);
   const instance = basicLightbox.create(
     `
   <div class="movies-modal">
@@ -23,17 +44,8 @@ function openModal() {
         <use href="images/icons.svg#icon-modal-close"></use>
       </svg>
     </button>
-
-    <div class="modal__btns">
-  <button type="button" class="modal__btns__button mr active js-addtowatched">
-    add to watched
-  </button>
-  <button type="button" class="modal__btns__button js-addtoqueue">
-    add to queue
-  </button>
+  ${moviesModalContent}
 </div>
-<div class="movies-lib"></div>
-  </div>
 `,
     {
       onShow: instance => {
