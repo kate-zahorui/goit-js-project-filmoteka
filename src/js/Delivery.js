@@ -38,6 +38,11 @@ class Delivery {
     // this.page += 1;
     return response.data;
   }
+
+  async fetchById(movieId) {
+    const response = await axios.get(`movie/${movieId}?api_key=${API_KEY}`);
+    return response.data;
+  }
 }
 
 export default Delivery;
