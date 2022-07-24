@@ -3,7 +3,6 @@ import getGenres from './getGenre';
 export function createMarkup(data) {
   return data
     .map(({ genre_ids, title, release_date, poster_path }) => {
-
       let genres = genre_ids.map(id => getGenres(id));
       if (genres.length > 2) {
         genres = `${genres[0]}, ${genres[1]}, Other`;
@@ -17,13 +16,4 @@ export function createMarkup(data) {
           </li>`;
     })
     .join('');
-}
-
-function genersByIds(genre_ids) {
-  const geners = genre_ids.map(id => getGenres(id));
-  if (geners.length > 2) {
-    geners.splice(2, 15, 'Other');
-    return geners;
-  }
-  return geners;
 }
