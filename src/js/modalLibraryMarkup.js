@@ -33,7 +33,7 @@ export function modalLibraryMarkup({
       <h3 class="movie-modal__about--title">ABOUT</h3>
       <p class="movie-modal__about">${overview}</p>
       <div class="modal__btns">
-        <button type="button" class="modal__btns__button mr active js-addtowatched">add to watched</button>
+        <button type="button" class="modal__btns__button js-addtowatched">add to watched</button>
         <button type="button" class="modal__btns__button js-addtoqueue">add to queue</button>
       </div>
   </div>

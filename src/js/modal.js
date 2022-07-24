@@ -1,7 +1,8 @@
 import * as basicLightbox from 'basiclightbox';
 import Delivery from './Delivery';
 import { modalLibraryMarkup } from './modalLibraryMarkup';
-// import './buttons';
+import './buttonsModal';
+import { addModalButtons, getMovie } from './buttonsModal';
 
 const delivery = new Delivery();
 let modalRef = {};
@@ -20,6 +21,8 @@ async function onFilmClick(e) {
   const movie = await getMovieById(movieId);
 
   openModal(movie);
+  getMovie(movie);
+  addModalButtons();
 }
 
 function getId(movieCard) {
