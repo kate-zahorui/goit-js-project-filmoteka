@@ -4,6 +4,7 @@ import { modalLibraryMarkup } from './modalLibraryMarkup';
 // import './buttons';
 
 const delivery = new Delivery();
+let modalRef = {};
 
 const listRef = document.querySelector('.list__film');
 
