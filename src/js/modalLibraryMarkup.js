@@ -16,19 +16,22 @@ export function modalLibraryMarkup({
   <img class="movie-modal__img" src="https://image.tmdb.org/t/p/original/${poster_path}" alt="${title}"></img>
   <div class="movie-modal__text">
     <h2 class="movie-modal__title">${title}</h2>
-      <div class="movie-modal__figures"><ul>
+      <div class="movie-modal__figures"><ul class="movie-modal__properties list">
         <li>Vote / Votes</li>
         <li>Popularity</li>
         <li>Original Title</li>
         <li>Genre</li>
       </ul>
-      <ul>
-        <li>${vote_average} / ${vote_count}</li>
-        <li>${popularity}</li>
-        <li>${original_title}</li>
+      <ul class="movie-modal__values list">
+        <li><span class="movie-modal__vote-average">${vote_average.toFixed(
+          1
+        )}</span> / <span class="movie-modal__vote-count">${vote_count}</span></li>
+        <li>${popularity.toFixed(1)}</li>
+        <li class="movie-modal__title-original">${original_title}</li>
         <li>${movieGenres}</li>
       </ul></div>
-      <p class="movie-modal__about"><span class="movie-modal__about--span">ABOUT</span>${overview}</p>
+      <h3 class="movie-modal__about--title">ABOUT</h3>
+      <p class="movie-modal__about">${overview}</p>
       <div class="modal__btns">
         <button type="button" class="modal__btns__button mr active js-addtowatched">add to watched</button>
         <button type="button" class="modal__btns__button js-addtoqueue">add to queue</button>
