@@ -49,7 +49,11 @@
 }
 
 .list__text{
+    width: 280px;
 padding-top: 10px;
+@include tablet {
+    width: 336px;
+    }
 @include desktop {
     width: 394px;
 }
