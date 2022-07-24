@@ -18,9 +18,11 @@ export function createMarkup(data) {
     .join('');
 }
 
-// function g(genre_ids) {
-//     if (genre_ids.length > 3) {
-//       const geners = genre_ids;
-//   }
-//   const geners = genre_ids.map(id => getGenres(id));
-// }
+function genersByIds(genre_ids) {
+  const geners = genre_ids.map(id => getGenres(id));
+  if (geners.length > 2) {
+    geners.splice(2, 15, 'Other');
+    return geners;
+  }
+  return geners;
+}
