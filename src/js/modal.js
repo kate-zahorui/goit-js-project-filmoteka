@@ -62,8 +62,7 @@ function openModal(movie) {
     }
   );
   instance.show();
-  const modalRef = instance;
-  return modalRef;
+  return (modalRef = instance);
 }
 
 function modalCloseByEsc(event) {
