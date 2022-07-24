@@ -1,5 +1,5 @@
 import getGenres from './getGenre';
-import poster from '../images/I6coC.jpg';
+import poster from '../images/noposter.jpg';
 
 export function createMarkup(data) {
   return data
