@@ -14,8 +14,8 @@ export function createMarkup(data) {
       } else {
         posterUrl = `https://image.tmdb.org/t/p/original/${poster_path}`;
       }
-      return /*html*/ `<li class="list__item" id="${id}>
-            <img src=" ${posterUrl}" alt="" class="list__img" />
+      return /*html*/ `<li class="list__item" id="${id}">
+            <img src="${posterUrl}" alt="" class="list__img" />
             <div class="list__text">
               <h2 class="list__title">${title}</h2>
               <p class="list__genre">${genres} | ${release_date.slice(0, 4)}</p>
