@@ -42,7 +42,7 @@ function openModal(movie) {
   <div class="movies-modal">
     <button type="button" class="movies-modal__close-btn" data-modal-close>
       <svg class="movies-modal__close-icon" width="30" height="30">
-        <use href="images/icons.svg#icon-modal-close"></use>
+        <use href="../images/icons.svg#icon-modal-close"></use>
       </svg>
     </button>
   ${moviesModalContent}
@@ -61,7 +61,8 @@ function openModal(movie) {
     }
   );
   instance.show();
-  return (modalRef = instance);
+  const modalRef = instance;
+  return modalRef;
 }
 
 function modalCloseByEsc(event) {
