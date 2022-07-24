@@ -1,6 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import Delivery from './Delivery';
 import { modalLibraryMarkup } from './modalLibraryMarkup';
+// import './buttons';
 
 const delivery = new Delivery();
 

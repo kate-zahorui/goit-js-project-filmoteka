@@ -9,7 +9,6 @@ export function modalLibraryMarkup({
   overview,
 }) {
   let movieGenres = genres.map(genre => genre.name);
-  console.log(movieGenres);
   if (movieGenres.length > 2) {
     movieGenres = `${movieGenres[0]}, ${movieGenres[1]}, Other`;
   }
