@@ -90,11 +90,10 @@ color: $accentColor;
 }
 
 .tui-pagination{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 0 0 0;
+    height: 40px;
     @include tablet {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin: 60px 0 0 0;
     }
 }
   
@@ -109,17 +108,31 @@ color: $accentColor;
         width: 40px;
 }
 }
+
+.tui-pagination .tui-page-btn{
+    width: 32px;
+    height: 32px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    line-height: 1.33;
+    border: transparent;
+}
+
 .tui-pagination .tui-is-selected, .tui-pagination strong{
+    width: 40px;
+    height: 40px;
+    padding-top: 11px;
+    font-size: 16px;
     border-color:$accentColor;
     background:$accentColor;
     border-radius: 5px;
 }
+
 .tui-pagination .tui-first-child.tui-is-selected{
     border-left: transparent;
 }
-.tui-pagination .tui-page-btn{
-    border: transparent;
-}
+
+
 
 // .tui-pagination .tui-is-selected:hover {
 //     background-color: #4b96e6;
@@ -133,4 +146,21 @@ color: $accentColor;
 
 .tui-pagination .tui-last-child.tui-is-selected {
     border-right: transparent; 
+}
+
+.tui-pagination .tui-next-is-ellip, .tui-pagination .tui-prev-is-ellip {
+    padding-top: 0px;
+    @media screen and (max-width: 480px){
+        display: none;
+    }
+}
+
+.tui-pagination .tui-first, .tui-pagination .tui-last{
+    @media screen and (max-width: 480px){
+        display: none;
+    }
+}
+
+.tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last {
+    padding-top: 12px;
 }
