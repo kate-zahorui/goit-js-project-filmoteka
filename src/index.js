@@ -26,7 +26,7 @@ async function searchMovies() {
     delivery.query = query;
     const data = await getMovies();
     if (data.total_results) {
-        instance = getPagination(data.total_results);
+        instance = getPagination(data.total_results, 20);
         instance.on('afterMove', loadPage);
     } else {
         container.setAttribute('style', 'display: none');
