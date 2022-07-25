@@ -2,10 +2,15 @@ import debounce from 'lodash.debounce';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import Delivery from './js/Delivery';
 import getGenres from './js/getGenre';
+
+import './js/modalSingUp';
+
+
 import { createMarkup } from './js/markupFilmCard';
 import getPagination from './js/pagination';
 import loading from './js/loadingSpinner';
 import './js/modal';
+
 const container = document.getElementById('tui-pagination-container');
 
 const listRef = document.querySelector('.list__film');
@@ -14,8 +19,14 @@ const search = document.querySelector('#search-box');
 const delivery = new Delivery();
 
 search.addEventListener('input', debounce(searchMovies, 500));
+
+
+
+getMovies();
+
 let instance;
 searchMovies();
+
 
 async function searchMovies() {
     if (instance) {
