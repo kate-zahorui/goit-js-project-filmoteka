@@ -26,6 +26,8 @@ export function getMovie(movieFromModal) {
 export function addModalButtons() {
     watchList = lsAPI.load(LS_WATCHED_KEY);
     queueList = lsAPI.load(LS_QUEUE_KEY);
+    watchList = watchList ? watchList : [];
+    queueList = queueList ? queueList : [];
     addToWatchedBtn = document.querySelector('.js-addtowatched');
     addToQueueBtn = document.querySelector('.js-addtoqueue');
 

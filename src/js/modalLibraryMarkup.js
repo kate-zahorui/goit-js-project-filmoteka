@@ -1,3 +1,5 @@
+import poster from '../images/noposter.jpg';
+
 export function modalLibraryMarkup({
     poster_path,
     title,
@@ -12,8 +14,15 @@ export function modalLibraryMarkup({
     if (movieGenres.length > 2) {
         movieGenres = `${movieGenres[0]}, ${movieGenres[1]}, Other`;
     }
+    let posterUrl;
+    if (!poster_path) {
+        posterUrl = poster;
+    } else {
+        posterUrl = `https://image.tmdb.org/t/p/original/${poster_path}`;
+    }
+
     return /*html*/ `<div class="movie-modal__content">
-  <img class="movie-modal__img" src="https://image.tmdb.org/t/p/original/${poster_path}" alt="${title}"></img>
+  <img class="movie-modal__img" src="${posterUrl}" alt="${title}"></img>
   <div class="movie-modal__text">
     <h2 class="movie-modal__title">${title}</h2>
       <div class="movie-modal__figures"><ul class="movie-modal__properties list">
