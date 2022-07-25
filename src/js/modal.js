@@ -3,6 +3,7 @@ import Delivery from './Delivery';
 import { modalLibraryMarkup } from './modalLibraryMarkup';
 import './buttonsModal';
 import { addModalButtons, getMovie } from './buttonsModal';
+import svg from '../images/icons.svg';
 
 const delivery = new Delivery();
 let modalRef = {};
@@ -45,6 +46,9 @@ function openModal(movie) {
         `
   <div class="movies-modal">
     <button type="button" class="movies-modal__close-btn" data-modal-close>
+      <svg class="movies-modal__close-icon" width="16" height="16">
+        <use href="${svg}#icon-close"></use>
+      </svg>
     </button>
   ${moviesModalContent}
 </div>
@@ -76,10 +80,4 @@ function modalCloseByEsc(event) {
     if (isEscKey) {
         modalRef.close();
     }
-}
-
-{
-    /* <svg class="movies-modal__close-icon" width="30" height="30">
-  <use href="./images/icons.svg#icon-modal-close"></use>
-</svg>; */
 }
