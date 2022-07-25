@@ -34,9 +34,16 @@
 
     color: $whiteColor;
 
+
     @include desktop {
         gap: 10px;
     }
+}
+
+.logo_i {
+    fill: red;
+    color: blue;
+    stroke: green;
 }
 
 .logo__text {
@@ -116,4 +123,32 @@
     right: 0;
     bottom: 6px;
     fill: $whiteColor;
+}
+
+.header-my-library {
+    height: 230px;
+    padding-top: 40px;
+    background-image: url(../images/my_library_mobile.jpg), linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56));
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @include retina {
+        background-image: url(../images/my_library_mobile@2x.jpg), linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56));
+    }
+
+
+    @include tablet {
+        height: 219px;
+        background-image: url(../images/my_library_tablet.jpg), linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56));
+        @include retina {
+            background-image: url(../images/my_library_tablet@2x.jpg), linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56));
+        }             
+    }
+
+    @include desktop {
+        height: 216px;
+        background-image: url(../images/my_library_desktop.jpg), linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56));
+        @include retina {
+            background-image: url(../images/my_library_desktop@2x.jpg), linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56));
+        }
+    }
 }

@@ -1,4 +1,5 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+@import '~node_modules/tui-pagination/dist/tui-pagination.min.css';
 
 @import './utils/variables';
 @import './utils/mixins';
@@ -7,6 +8,7 @@
 @import './utils/hidden';
 @import './components/container';
 @import './components/buttons';
+@import './components/spinner';
 
 @import './layout/header';
 @import './layout/main';
