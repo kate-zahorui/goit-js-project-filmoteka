@@ -1,6 +1,8 @@
 import debounce from 'lodash.debounce';
 import Delivery from './js/Delivery';
 import getGenres from './js/getGenre';
+import modalSingUp from './js/modalSingUp';
+
 
 import './js/buttons';
 
@@ -9,6 +11,7 @@ const delivery = new Delivery();
 
 search.addEventListener('input', debounce(searchMovies, 500));
 
+modalSingUp();
 getMovies();
 
 async function searchMovies() {
