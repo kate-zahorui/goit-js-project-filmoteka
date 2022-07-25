@@ -1,5 +1,4 @@
 import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/dist/basicLightbox.min.css';
 import photo1 from '../images/photo_1.jpg'
 import photo2 from '../images/photo_2.jpg'
 import photo3 from '../images/photo_3.jpg'
