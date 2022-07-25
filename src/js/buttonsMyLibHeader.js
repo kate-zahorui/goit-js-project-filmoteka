@@ -61,7 +61,7 @@ function onPagination(btn) {
 
         pagination.movePageTo(1);
     } else {
-        console.log('Чистота');
+        // console.log('Чистота');
         container.setAttribute('style', 'display: none');
         libraryEl.innerHTML = '';
         Notify.info('Your library is empty. You can add something');
