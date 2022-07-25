@@ -5,10 +5,10 @@ import photo2 from '../images/photo_2.jpg'
 import photo3 from '../images/photo_3.jpg'
 import photo4 from '../images/photo_4.jpg'
 import photo5 from '../images/photo_5.jpg'
-// import close from '../images/close.png'
+import close from '../images/close.svg'
 
 
-export default () => {
+
 const refs = {
     openModalBtn: document.querySelector("[data-modal-open]"),
     closeModalBtn: document.querySelector("[data-modal-close]"),
@@ -28,9 +28,9 @@ const refs = {
 const modal = basicLightbox.create(
         `<div class="modal" data-modal>
             <button type="button" class="btn__modal__close" data-modal-close>
-            // <img class="modal__svg__image src="${close}">
+           
                 <svg class="modal__svg__image">
-                    <use class="modal__svg__icon" href="../images/close.svg#icon-close"></use>
+                    <use class="modal__svg__icon" href="${close}#icon-close"></use>
                 </svg>
             </button>
             <div class="modal__photos">
@@ -80,7 +80,7 @@ function clickEsc(event) {
     }
 }
 
-}
+
 
 
 
