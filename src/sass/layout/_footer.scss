@@ -103,6 +103,7 @@
     @include desktop {
         width: 1160px;
         padding: 40px;
+        overflow-y: auto;
     }
 }
 
