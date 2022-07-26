@@ -2,7 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import Delivery from './Delivery';
 import { modalLibraryMarkup } from './modalLibraryMarkup';
 import './buttonsModal';
-import { addModalButtons, getMovie } from './buttonsModal';
+import { addModalButtons, setMovie } from './buttonsModal';
 import svg from '../images/icons.svg';
 
 const delivery = new Delivery();
@@ -22,7 +22,7 @@ async function onFilmClick(e) {
     const movie = await getMovieById(movieId);
 
     openModal(movie);
-    getMovie(movie);
+    setMovie(movie);
     addModalButtons();
 }
 
@@ -35,9 +35,8 @@ async function getMovieById(movieId) {
         const movie = await delivery.fetchById(movieId);
         return movie;
     } catch (error) {
-        console.log('ERROR = ', error);
+        console.log(error);
     }
-    console.log(data);
 }
 
 function openModal(movie) {
@@ -60,12 +59,19 @@ function openModal(movie) {
                     .querySelector('button[data-modal-close]').onclick =
                     instance.close;
                 document.body.setAttribute('style', 'overflow: hidden');
-
                 document.addEventListener('keydown', modalCloseByEsc);
             },
             onClose: () => {
                 document.removeEventListener('keydown', modalCloseByEsc);
                 document.body.removeAttribute('style');
+                const btn = document.querySelector('.active');
+                if (btn) {
+                    sessionStorage.setItem(
+                        'savePage',
+                        sessionStorage.getItem('page')
+                    );
+                    btn.dispatchEvent(new Event('click'));
+                }
             },
         }
     );

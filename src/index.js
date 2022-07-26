@@ -1,37 +1,43 @@
 import debounce from 'lodash.debounce';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import Delivery from './js/Delivery';
-import getGenres from './js/getGenre';
-
-import './js/modalSingUp';
-
-
+import { logOutForm, registerOpen } from './js/authentication';
 import { createMarkup } from './js/markupFilmCard';
 import getPagination from './js/pagination';
 import loading from './js/loadingSpinner';
+import './js/modalSingUp';
 import './js/modal';
+
+import './js/authentication';
 
 const container = document.getElementById('tui-pagination-container');
 
 const listRef = document.querySelector('.list__film');
-
+const signUp = document.querySelector('#user');
 const search = document.querySelector('#search-box');
 const delivery = new Delivery();
+const user = JSON.parse(sessionStorage.getItem('user'));
 
 search.addEventListener('input', debounce(searchMovies, 500));
 
-
-
-getMovies();
-
 let instance;
-searchMovies();
+if (user) {
+    signUp.textContent = user.displayName || 'Anonymous';
+    signUp.removeEventListener('click', registerOpen);
+    signUp.addEventListener('click', logOutForm);
+} else {
+    signUp.removeEventListener('click', logOutForm);
+    signUp.addEventListener('click', registerOpen);
+    signUp.textContent = 'Login | Join';
+}
 
+searchMovies();
 
 async function searchMovies() {
     if (instance) {
         instance.reset();
     }
+
     container.removeAttribute('style');
     const query = search.value.trim();
     delivery.query = query;
@@ -60,6 +66,7 @@ async function searchMovies() {
 async function getMovies() {
     loading.show();
     let data;
+
     try {
         data = delivery.query
             ? await delivery.search()
@@ -69,8 +76,8 @@ async function getMovies() {
     } catch (error) {
         console.log('ERROR = ', error);
     }
-    //console.log(data); // Не забыть удалить
     loading.close();
+
     return data;
 }
 
