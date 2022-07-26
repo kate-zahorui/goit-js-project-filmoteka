@@ -43,7 +43,7 @@ function onPagination(btn) {
         perPage = 8;
     } else perPage = 4;
 
-    if (lsAPI.load(btn).length) {
+    if (lsAPI.load(btn) && lsAPI.load(btn).length) {
         pagination = getPagination(lsAPI.load(btn).length, perPage);
         container.removeAttribute('style');
         pagination.on('afterMove', event => {
