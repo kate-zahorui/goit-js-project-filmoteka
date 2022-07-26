@@ -46,6 +46,13 @@ class Delivery {
         const response = await axios.get(`movie/${movieId}?api_key=${API_KEY}`);
         return response.data;
     }
+
+    async fetchTrailer(movieId) {
+        const response = await axios.get(
+            `movie/${movieId}/videos?api_key=${API_KEY}`
+        );
+        return response.data;
+    }
 }
 
 export default Delivery;
