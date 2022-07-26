@@ -10,6 +10,7 @@ class Delivery {
     constructor() {
         this.page = 1;
         this.include_adult = false;
+        this.primary_release_year = '';
     }
 
     get query() {
@@ -34,6 +35,8 @@ class Delivery {
             params: {
                 query: this.#query,
                 page: this.page,
+                include_adult: this.include_adult,
+                primary_release_year: this.primary_release_year,
             },
         });
         return response.data;
