@@ -139,12 +139,55 @@
 }
 
 .movie-modal__about--title {
-    font-weight: 500;
     margin-bottom: 8px;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
-.movie-modal__about {
+.movie-modal__about--text {
     margin-bottom: 20px;
     line-height: 1.67;
+}
+
+.modal__watch-button {
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $mainColor;
+    background-color: $bgColor;
+    border: none;
+
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+
+    cursor: pointer;
+    transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include desktop {
+        padding: 12px 15px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $accentColor;
+        transform: scale(1.03);
+    }
+}
+
+.movies-modal__play-icon {
+    fill: currentColor;
+    flex-shrink: 0;
+    margin-right: 5px;
 }
