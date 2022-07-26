@@ -9,6 +9,7 @@ class Delivery {
 
     constructor() {
         this.page = 1;
+        this.include_adult = false;
     }
 
     get query() {
@@ -35,7 +36,6 @@ class Delivery {
                 page: this.page,
             },
         });
-        // this.page += 1;
         return response.data;
     }
 

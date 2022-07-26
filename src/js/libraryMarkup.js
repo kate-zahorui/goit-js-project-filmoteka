@@ -1,5 +1,3 @@
-import getGenres from './getGenre';
-
 export default function libraryMarkup(moviesSet) {
     return moviesSet
         .map(
