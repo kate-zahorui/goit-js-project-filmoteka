@@ -27,7 +27,7 @@ export const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const signUp = document.querySelector('#user');
 
-let regisrationForm, form, user;
+let regisrationForm, form, user, google, formLog, cancelBtn;
 
 signUp.addEventListener('click', registerOpen);
 
@@ -70,15 +70,15 @@ export function registerOpen(event) {
     
     `);
     regisrationForm.show();
-    const form = document.querySelector('#registrationForm');
-    const google = document.querySelector('#google');
+    form = document.querySelector('#registrationForm');
+    google = document.querySelector('#google');
     form.addEventListener('submit', registration);
     google.addEventListener('click', googleOpen);
 
-    const formLog = document.querySelector('#loginForm');
+    formLog = document.querySelector('#loginForm');
     formLog.addEventListener('submit', login);
 
-    const cancelBtn = document.querySelector('#cancel');
+    cancelBtn = document.querySelector('#cancel');
     cancelBtn.addEventListener('click', modalClose);
 }
 
