@@ -2,10 +2,13 @@ import './js/buttonsMyLibHeader';
 import './js/modal';
 import './js/modalSingUp';
 import lsAPI from './js/localestorage';
+import { watchedBtnClick, queueBtnClick } from './js/buttonsMyLibHeader';
+import './js/modalSingUp';
 import { btnClick } from './js/buttonsMyLibHeader';
 import { clickFirebase, btnClickFirebase } from './js/btnFromFirebase';
 import './js/authentication';
 import { logOutForm, registerOpen } from './js/authentication';
+
 
 const LS_LIBRARY_STATE = 'library-state';
 const signUp = document.querySelector('#user');

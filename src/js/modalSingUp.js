@@ -19,42 +19,52 @@ const modal = basicLightbox.create(
         <use href="${close}#icon-close"></use>
       </svg>
     </button>
-    <div class="modal__team">TEAM "the big code theory"</div>
+    <h2 class="modal__team">TEAM "the big code theory"</h2>
             <div class="modal__photos">
             <div class="modal__thumb">
+            
             <div class="modal__images">
-            <img class="modal__photo" src="${photo3}" width="100" alt="Kate photo"/>
+            <img class="modal__photo" src="${photo3}" alt="Kate photo"/>
+                <div class="modal__about">
                 <h3 class="modal__name">Катерина Загоруй</h3>
                 <h4>Team Lead</h4>
                 <p>Frontend Developer</p>
+                </div>
             </div>
 
             <div class="modal__images">
-            <img class="modal__photo" src="${photo2}" width="100" alt="Serg photo"/>
+            <img class="modal__photo" src="${photo2}" alt="Serg photo"/>
+                <div class="modal__about">
                 <h3 class="modal__name">Сергій Соловйов</h3>
-                <h4>Scram Masper</h4>
+                <h4>Scrum Master</h4>
                 <p>Frontend Developer</p>
+                </div>
             </div>
             </div>
-             
+            
             <div class="modal__thumb">
-                  <div class="modal__images">
-                <img class="modal__photo" src="${photo1}" width="100"  alt="Oleg photo"/>
+            <div class="modal__images">
+                <img class="modal__photo" src="${photo1}" alt="Oleg photo"/>
+                <div class="modal__about">
                 <h3 class="modal__name">Олег Чучин</h3>
-                <p>Frontend Developer</p>     
-                
+                <p>Frontend Developer</p>
+                </div>
             </div>
             
             <div class="modal__images">
-            <img class="modal__photo" src="${photo4}" width="100" alt="Andrey photo">
+            <img class="modal__photo" src="${photo4}" alt="Andrey photo">
+                <div class="modal__about">
                 <h3 class="modal__name">Андрій Макаров</h3>
                 <p>Frontend Developer</p>
+                </div>
             </div>
 
             <div class="modal__images">
-            <img class="modal__photo" src="${photo5}" width="100" alt="Alex photo">
+            <img class="modal__photo" src="${photo5}" alt="Alex photo">
+                <div class="modal__about">
                 <h3 class="modal__name">Олександр Алемаев</h3>
                 <p>Frontend Developer</p>
+                </div>
             </div>
             </div>
        

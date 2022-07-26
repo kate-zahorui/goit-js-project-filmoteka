@@ -44,7 +44,7 @@ class Delivery {
         return response.data;
     }
 
-    async fatchTrailer(movieId) {
+    async fetchTrailer(movieId) {
         const response = await axios.get(
             `movie/${movieId}/videos?api_key=${API_KEY}`
         );
