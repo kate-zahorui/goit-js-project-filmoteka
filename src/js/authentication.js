@@ -70,15 +70,15 @@ export function registerOpen(event) {
     
     `);
     regisrationForm.show();
-    form = document.querySelector('#registrationForm');
-    google = document.querySelector('#google');
+    const form = document.querySelector('#registrationForm');
+    const google = document.querySelector('#google');
     form.addEventListener('submit', registration);
     google.addEventListener('click', googleOpen);
 
-    formLog = document.querySelector('#loginForm');
+    const formLog = document.querySelector('#loginForm');
     formLog.addEventListener('submit', login);
 
-    cancelBtn = document.querySelector('#cancel');
+    const cancelBtn = document.querySelector('#cancel');
     cancelBtn.addEventListener('click', modalClose);
 }
 
@@ -185,7 +185,7 @@ export function logOutForm() {
     regisrationForm.show();
     const logOutBtn = document.querySelector('#logOutBtn');
     logOutBtn.addEventListener('click', logOut);
-    cancelBtn = document.querySelector('#cancel');
+    const cancelBtn = document.querySelector('#cancel');
     cancelBtn.addEventListener('click', modalClose);
 }
 
