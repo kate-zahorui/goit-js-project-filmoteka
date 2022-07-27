@@ -11,6 +11,7 @@ import './js/modal';
 import './js/filters';
 
 import './js/authentication';
+import * as hiddenArrowUp from './js/hiddenArrowUp';
 
 const container = document.getElementById('tui-pagination-container');
 

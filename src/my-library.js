@@ -8,7 +8,7 @@ import { btnClick } from './js/buttonsMyLibHeader';
 import { clickFirebase, btnClickFirebase } from './js/btnFromFirebase';
 import './js/authentication';
 import { logOutForm, registerOpen } from './js/authentication';
-
+import * as hiddenArrowUp from './js/hiddenArrowUp';
 
 const LS_LIBRARY_STATE = 'library-state';
 const signUp = document.querySelector('#user');
