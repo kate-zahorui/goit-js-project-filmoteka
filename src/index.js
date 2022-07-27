@@ -5,8 +5,10 @@ import { logOutForm, registerOpen } from './js/authentication';
 import { createMarkup } from './js/markupFilmCard';
 import getPagination from './js/pagination';
 import loading from './js/loadingSpinner';
+import { refs } from './js/filters';
 import './js/modalSingUp';
 import './js/modal';
+import './js/filters';
 
 import './js/authentication';
 
@@ -19,6 +21,7 @@ const delivery = new Delivery();
 const user = JSON.parse(sessionStorage.getItem('user'));
 
 search.addEventListener('input', debounce(searchMovies, 500));
+refs.resetBtnRef.addEventListener('click', resetFilters);
 
 let instance;
 if (user) {
@@ -84,4 +87,46 @@ async function getMovies() {
 function loadPage(event) {
     delivery.page = event.page;
     getMovies();
+}
+
+export async function addFilter(year = '', boolean = false) {
+    if (instance) {
+        instance.reset();
+    }
+    const query = search.value.trim();
+    delivery.query = query;
+    delivery.primary_release_year = year;
+    delivery.include_adult = boolean;
+    let data;
+    try {
+        if (!delivery.query) {
+            delivery.query = 'all';
+        }
+        data = await delivery.search();
+        const markup = createMarkup(data.results);
+        listRef.innerHTML = markup;
+    } catch (error) {
+        console.log('ERROR = ', error);
+    }
+    return data;
+}
+
+async function resetFilters() {
+    if (instance) {
+        instance.reset();
+    }
+    search.value = '';
+    delivery.primary_release_year = '';
+    refs.forAdult.checked = false;
+    refs.rangeSlider.value = 2022;
+    refs.rangeBullet.innerHTML = refs.rangeSlider.value;
+    let data;
+    try {
+        data = await refs.delivery.trend();
+        const markup = createMarkup(data.results);
+        refs.listRef.innerHTML = markup;
+    } catch (error) {
+        console.log('ERROR = ', error);
+    }
+    return data;
 }

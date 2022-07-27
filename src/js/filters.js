@@ -2,41 +2,33 @@ import Delivery from './Delivery';
 import { createMarkup } from './markupFilmCard';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
+import { addFilter } from '../index';
 
-const listRef = document.querySelector('.list__film');
-const inputRef = document.querySelector('#range');
-const rangeSlider = document.getElementById('range');
-const rangeBullet = document.getElementById('rs-bullet');
-const resetBtnRef = document.querySelector('.reset__btn');
-const forAdult = document.querySelector('#i');
-const delivery = new Delivery();
+export const refs = {
+    listRef: document.querySelector('.list__film'),
+    inputRef: document.querySelector('#range'),
+    rangeSlider: document.getElementById('range'),
+    rangeBullet: document.getElementById('rs-bullet'),
+    resetBtnRef: document.querySelector('.reset__btn'),
+    forAdult: document.querySelector('#i'),
+    delivery: new Delivery(),
+};
 
-rangeSlider.addEventListener('input', showSliderValue, false);
-resetBtnRef.addEventListener('click', reset);
+refs.rangeSlider.addEventListener('input', showSliderValue, false);
+// refs.resetBtnRef.addEventListener('click', resetFilters);
 
-inputRef.addEventListener('mouseup', event => {
+refs.inputRef.addEventListener('mouseup', event => {
     const year = event.currentTarget.value;
-    getMoviesByYear(year);
+    if (refs.forAdult.checked) {
+        let bool = true;
+        addFilter(year, bool);
+    } else {
+        addFilter(year);
+    }
 });
 
-async function getMoviesByYear(year) {
-    delivery.query = 'all';
-    delivery.primary_release_year = year;
-    let data;
-    try {
-        data = await delivery.search();
-        console.log(delivery.primary_release_year);
-        const markup = createMarkup(data.results);
-        listRef.innerHTML = markup;
-    } catch (error) {
-        console.log('ERROR = ', error);
-    }
-    return data;
-}
-
-forAdult.addEventListener('change', () => {
-    console.log(forAdult.checked);
-    if (forAdult.checked) {
+refs.forAdult.addEventListener('change', () => {
+    if (refs.forAdult.checked) {
         Confirm.prompt(
             'Confirm your age',
             'Put your age',
@@ -45,52 +37,36 @@ forAdult.addEventListener('change', () => {
             'Cancel',
             function okCb(clientAnswer) {
                 if (clientAnswer >= 18) {
-                    getMoviesForAdult(true);
+                    addFilter(refs.inputRef.value, true);
                 } else {
-                    forAdult.checked = false;
-                    Notify.warning('Sorry you are to young');
+                    refs.forAdult.checked = false;
+                    Notify.warning('Sorry, but not today');
                 }
             },
             function cancelCb() {
-                forAdult.checked = false;
+                refs.forAdult.checked = false;
             }
         );
-    } else if (!forAdult.checked) {
-        getMoviesForAdult(false);
+    } else if (!refs.forAdult.checked) {
+        addFilter(refs.inputRef.value, false);
     }
 });
 
-async function getMoviesForAdult(boolean) {
-    delivery.query = 'all';
-    delivery.include_adult = boolean;
-    let data;
-    try {
-        data = await delivery.search();
-        console.log(delivery.include_adult);
-        const markup = createMarkup(data.results);
-        listRef.innerHTML = markup;
-    } catch (error) {
-        console.log('ERROR = ', error);
-    }
-    return data;
-}
-
 function showSliderValue() {
-    rangeBullet.innerHTML = rangeSlider.value;
+    refs.rangeBullet.innerHTML = refs.rangeSlider.value;
 }
 
-async function reset() {
-    let data;
-    forAdult.checked = false;
-    rangeSlider.value = 2022;
-    rangeBullet.innerHTML = rangeSlider.value;
-    try {
-        data = await delivery.trend();
-        console.log(delivery.include_adult);
-        const markup = createMarkup(data.results);
-        listRef.innerHTML = markup;
-    } catch (error) {
-        console.log('ERROR = ', error);
-    }
-    return data;
-}
+// async function resetFilters() {
+//     let data;
+//     refs.forAdult.checked = false;
+//     refs.rangeSlider.value = 2022;
+//     refs.rangeBullet.innerHTML = refs.rangeSlider.value;
+//     try {
+//         data = await refs.delivery.trend();
+//         const markup = createMarkup(data.results);
+//         refs.listRef.innerHTML = markup;
+//     } catch (error) {
+//         console.log('ERROR = ', error);
+//     }
+//     return data;
+// }
