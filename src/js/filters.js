@@ -1,5 +1,4 @@
 import Delivery from './Delivery';
-import { createMarkup } from './markupFilmCard';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
 import { addFilter } from '../index';
@@ -15,7 +14,6 @@ export const refs = {
 };
 
 refs.rangeSlider.addEventListener('input', showSliderValue, false);
-// refs.resetBtnRef.addEventListener('click', resetFilters);
 
 refs.inputRef.addEventListener('mouseup', event => {
     const year = event.currentTarget.value;
@@ -55,18 +53,3 @@ refs.forAdult.addEventListener('change', () => {
 function showSliderValue() {
     refs.rangeBullet.innerHTML = refs.rangeSlider.value;
 }
-
-// async function resetFilters() {
-//     let data;
-//     refs.forAdult.checked = false;
-//     refs.rangeSlider.value = 2022;
-//     refs.rangeBullet.innerHTML = refs.rangeSlider.value;
-//     try {
-//         data = await refs.delivery.trend();
-//         const markup = createMarkup(data.results);
-//         refs.listRef.innerHTML = markup;
-//     } catch (error) {
-//         console.log('ERROR = ', error);
-//     }
-//     return data;
-// }
