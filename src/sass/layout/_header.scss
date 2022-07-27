@@ -152,7 +152,7 @@
 .header__container {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .slider__container {
@@ -163,7 +163,7 @@
 }
 .box-minmax {
     margin-top: 5px;
-    width: 200px;
+    width: 150px;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -175,7 +175,7 @@
 // }
 .rs-range {
     // margin-top: 29px;
-    width: 180px;
+    width: 150px;
     -webkit-appearance: none;
     background-color: transparent;
     &:focus {
@@ -242,7 +242,7 @@
     // padding-top: 0px;
     box-sizing: border-box;
     margin-top: 5px;
-    margin-left: 80px;
+    margin-left: 50px;
     margin-bottom: 7px;
     left: attr(value);
     color: $accentColor;
