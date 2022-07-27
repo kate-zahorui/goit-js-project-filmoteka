@@ -40,7 +40,7 @@ export function registerOpen(event) {
             <input class="form__input" name='emailLog'/>
         </label>
         <label class="form__label">Password
-            <input class="form__input" name='passwordLog'/>
+            <input class="form__input" name='passwordLog' type="password"/>
         </label>  
         <div class="form__thumb">
             <button class ="form__button" type='submit' id='login'>Login</button>
@@ -61,7 +61,7 @@ export function registerOpen(event) {
             <input class="form__input" name='email'/>
         </label>
         <label class="form__label">Password
-            <input class="form__input" name='password'/>
+            <input class="form__input" name='password' type="password"/>
         </label>
         <div class="form__thumb">
             <button class ="form__button" type='submit'>Join</button>
